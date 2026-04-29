@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>1B Transactions — MagicBlock</title>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200;300;400;500;700;800;900&family=Cormorant+Garamond:ital,wght@0,300;0,500;1,300;1,400;1,500&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:#0a0a0a;font-family:'Space Grotesk',sans-serif;color:#fff;padding:40px 24px;}
+.container{max-width:1400px;margin:0 auto;}
+.controls{display:flex;gap:16px;margin-bottom:32px;justify-content:center;}
+button{font-family:'Unbounded',sans-serif;font-weight:700;font-size:13px;letter-spacing:2px;padding:12px 24px;border:none;border-radius:6px;cursor:pointer;transition:all 0.3s;}
+.btn-download{background:#AA00FF;color:#0a0a0a;}
+.btn-download:hover{background:#8800cc;transform:scale(1.05);}
+.banner{width:1600px;height:900px;background:#0a0a0a;position:relative;overflow:hidden;margin:0 auto;border:1px solid rgba(255,255,255,.1);}
+/* bg blob */
+.banner::before{content:'';position:absolute;top:-200px;right:-150px;width:800px;height:800px;background:radial-gradient(circle,#AA00FF 0%,transparent 60%);opacity:.25;filter:blur(80px);}
+.banner::after{content:'';position:absolute;bottom:-200px;left:-100px;width:600px;height:600px;background:radial-gradient(circle,#59E09D 0%,transparent 60%);opacity:.2;filter:blur(100px);}
+/* dot pattern */
+.banner{background-image:radial-gradient(circle at 1px 1px,rgba(255,255,255,.05) 1px,transparent 0);background-size:24px 24px;}
+.banner-content{position:relative;z-index:2;width:100%;height:100%;display:flex;flex-direction:column;}
+/* main title */
+.main-title{position:absolute;left:80px;top:180px;font-family:'Unbounded',sans-serif;font-weight:900;font-size:400px;line-height:.9;color:#fff;letter-spacing:-15px;z-index:1;}
+/* stickers */
+.sticker{position:absolute;padding:28px 36px;border-radius:14px;box-shadow:0 12px 40px rgba(0,0,0,.5);font-family:'Unbounded',sans-serif;z-index:3;}
+.sticker-1{right:100px;top:80px;background:#AA00FF;color:#0a0a0a;transform:rotate(7deg);}
+.sticker-1 .label{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:1.5px;opacity:.7;margin-bottom:8px;}
+.sticker-1 .text{font-weight:800;font-size:36px;line-height:1;}
+.sticker-2{right:80px;top:340px;background:#59E09D;color:#0a0a0a;transform:rotate(-4deg);}
+.sticker-2 .text{font-weight:700;font-size:28px;}
+.sticker-3{right:160px;bottom:220px;background:#F2805A;color:#0a0a0a;transform:rotate(5deg);}
+.sticker-3 .text{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;font-size:32px;line-height:1.2;}
+.sticker-4{left:80px;bottom:140px;background:#2545F6;color:#fff;transform:rotate(-3deg);}
+.sticker-4 .text{font-weight:700;font-size:32px;}
+/* bottom text */
+.bottom-text{position:absolute;left:80px;bottom:80px;max-width:900px;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:36px;color:#FCF2D8;line-height:1.3;z-index:3;}
+.bottom-text .highlight{color:#AA00FF;font-weight:500;}
+/* footer */
+.footer{position:absolute;bottom:30px;right:80px;display:flex;align-items:center;gap:16px;font-family:'Space Grotesk',sans-serif;font-size:13px;color:rgba(255,255,255,.5);z-index:3;}
+.footer .dot{width:8px;height:8px;background:#59E09D;border-radius:50%;}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="controls">
+    <button class="btn-download" onclick="downloadPNG()">↓ DOWNLOAD PNG</button>
+  </div>
+
+  <div id="bannerCanvas" class="banner">
+    <div class="main-title">1B</div>
+    
+    <div class="sticker sticker-1">
+      <div class="label">// ADDRESSES</div>
+      <div class="text">27K unique</div>
+    </div>
+    
+    <div class="sticker sticker-2">
+      <div class="text">no congestion ✦</div>
+    </div>
+    
+    <div class="sticker sticker-3">
+      <div class="text">real-time games</div>
+    </div>
+    
+    <div class="sticker sticker-4">
+      <div class="text">since June 2025</div>
+    </div>
+    
+    <div class="bottom-text">
+      when you see 1 billion real-time transactions — <span class="highlight">that's proof the engine works.</span>
+    </div>
+    
+    <div class="footer">
+      <div class="dot"></div>
+      <span>@magicblock · magicblock.xyz</span>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script>
+function downloadPNG() {
+  const banner = document.getElementById('bannerCanvas');
+  html2canvas(banner, {
+    backgroundColor: '#0a0a0a',
+    scale: 2,
+    logging: false
+  }).then(canvas => {
+    const link = document.createElement('a');
+    link.href = canvas.toDataURL('image/png');
+    link.download = '001-1b-transactions.png';
+    link.click();
+  });
+}
+</script>
+
+</body>
+</html>
