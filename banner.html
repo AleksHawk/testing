@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>1B Transactions — Style #7</title>
+<title>1B Transactions — Style #10</title>
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200;300;400;500;700;800;900&family=Cormorant+Garamond:ital,wght@0,300;0,500;1,300;1,400;1,500&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -10,103 +10,72 @@ body{background:#0a0a0a;font-family:'Space Grotesk',sans-serif;color:#fff;paddin
 .container{max-width:1400px;margin:0 auto;}
 .controls{display:flex;gap:16px;margin-bottom:32px;justify-content:center;flex-wrap:wrap;}
 button{font-family:'Unbounded',sans-serif;font-weight:700;font-size:13px;letter-spacing:2px;padding:12px 24px;border:none;border-radius:6px;cursor:pointer;transition:all 0.3s;}
-.btn-download{background:#59E09D;color:#0a0a0a;}
-.btn-download:hover{background:#3fc684;transform:scale(1.05);}
-.banner{width:1600px;height:900px;background:#0a0a0a;position:relative;overflow:hidden;margin:0 auto;border:1px solid rgba(255,255,255,.1);padding:60px;}
-.title-row{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:36px;}
-.title-left h2{font-family:'Unbounded',sans-serif;font-size:11px;letter-spacing:3px;color:rgba(255,255,255,.45);margin-bottom:14px;}
-.title-left h1{font-family:'Unbounded',sans-serif;font-weight:800;font-size:54px;line-height:1;color:#fff;letter-spacing:-2px;}
-.title-left h1 span{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;color:#FCF2D8;}
+.btn-download{background:#F2805A;color:#0a0a0a;}
+.btn-download:hover{background:#d96a42;transform:scale(1.05);}
+.banner{width:1600px;height:900px;background:#0a0a0a;position:relative;overflow:hidden;margin:0 auto;border:1px solid rgba(255,255,255,.1);padding:80px;}
+.header{display:flex;justify-content:space-between;margin-bottom:44px;}
+.header-left{font-family:'Unbounded',sans-serif;font-size:11px;letter-spacing:3px;color:rgba(255,255,255,.4);}
+.header-right{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;color:rgba(255,255,255,.5);}
+.main-title{font-family:'Unbounded',sans-serif;font-weight:800;font-size:60px;line-height:1;color:#fff;letter-spacing:-2px;margin-bottom:50px;}
+.main-title span{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;color:#FCF2D8;}
+.items{display:flex;flex-direction:column;gap:22px;}
+.item{display:flex;align-items:baseline;gap:32px;border-bottom:1px solid rgba(255,255,255,.08);padding-bottom:18px;}
+.item-number{font-family:'Unbounded',sans-serif;font-weight:900;font-size:48px;color:#AA00FF;letter-spacing:-1px;width:80px;flex-shrink:0;}
+.item-number.two{color:#F2805A;}
+.item-number.three{color:#59E09D;}
+.item-title{flex:1;font-family:'Unbounded',sans-serif;font-weight:700;font-size:30px;color:#fff;letter-spacing:-1px;}
+.item-desc{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;color:rgba(255,255,255,.45);max-width:480px;text-align:right;}
+.bottom{position:absolute;bottom:50px;left:80px;right:80px;display:flex;justify-content:space-between;align-items:center;}
+.cta{font-family:'Unbounded',sans-serif;font-size:13px;letter-spacing:2px;color:#fff;}
+.cta-badge{background:#AA00FF;color:#0a0a0a;padding:4px 14px;border-radius:4px;display:inline-block;margin:0 8px;}
 .social{display:flex;align-items:center;gap:18px;font-family:'Space Grotesk',sans-serif;font-size:13px;color:rgba(255,255,255,.5);}
 .social-item{display:flex;align-items:center;gap:7px;}
 .sep{width:1px;height:14px;background:rgba(255,255,255,.18);}
-/* grid */
-.grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;grid-template-rows:1fr 1fr;gap:18px;height:560px;margin-top:24px;}
-.box{border-radius:14px;padding:36px;display:flex;flex-direction:column;justify-content:space-between;color:#fff;}
-.box-label{font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:2px;opacity:.7;margin-bottom:auto;}
-.box-title{font-family:'Unbounded',sans-serif;font-weight:800;font-size:42px;line-height:1;letter-spacing:-1px;margin-bottom:12px;}
-.box-desc{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;line-height:1.3;opacity:.85;}
-/* big purple */
-.box-1{grid-row:span 2;background:linear-gradient(135deg,#AA00FF 0%,#6600AA 100%);}
-.box-1 .box-title{font-size:42px;}
-.box-1 .box-desc{color:#fff;}
-/* orange */
-.box-2{background:#F2805A;color:#0a0a0a;}
-.box-2 .box-title{font-size:30px;}
-.box-2 .box-desc{font-size:14px;opacity:.8;}
-/* green */
-.box-3{background:#59E09D;color:#0a0a0a;}
-.box-3 .box-title{font-size:30px;}
-.box-3 .box-desc{font-size:14px;opacity:.8;}
-/* cream outline */
-.box-4{background:transparent;border:1.5px solid rgba(255,255,255,.18);color:#FCF2D8;}
-.box-4 .box-title{font-size:30px;color:#fff;}
-.box-4 .box-desc{font-size:14px;color:rgba(255,255,255,.55);}
-/* blue */
-.box-5{background:#2545F6;color:#fff;}
-.box-5 .box-title{font-size:24px;}
-.box-5 .box-desc{font-size:13px;opacity:.85;}
 </style>
 </head>
 <body>
 
 <div class="container">
   <div class="controls">
-    <button class="btn-download" onclick="downloadPNG('002')">↓ DOWNLOAD PNG — Style #7</button>
+    <button class="btn-download" onclick="downloadPNG('003')">↓ DOWNLOAD PNG — Style #10</button>
   </div>
 
-  <div id="banner002" class="banner">
-    <div class="title-row">
-      <div class="title-left">
-        <h2>WHAT MAKES 1B TRANSACTIONS REAL</h2>
-        <h1>four pieces. <span>one chain.</span></h1>
+  <div id="banner003" class="banner">
+    <div class="header">
+      <span class="header-left">1B TRANSACTIONS · 27K ADDRESSES</span>
+      <span class="header-right">— why this matters</span>
+    </div>
+
+    <div class="main-title">
+      what real-time<br><span>actually proves</span>
+    </div>
+
+    <div class="items">
+      <div class="item">
+        <div class="item-number">01</div>
+        <div class="item-title">execution at scale</div>
+        <div class="item-desc">billion transactions without congestion</div>
       </div>
+
+      <div class="item">
+        <div class="item-number two">02</div>
+        <div class="item-title">games work on Solana</div>
+        <div class="item-desc">instant feel. mainnet security. no bridges.</div>
+      </div>
+
+      <div class="item">
+        <div class="item-number three">03</div>
+        <div class="item-title">infrastructure proven</div>
+        <div class="item-desc">since June 2025. live. ready.</div>
+      </div>
+    </div>
+
+    <div class="bottom">
+      <div class="cta">→ <span class="cta-badge">MAGICBLOCK</span> is live.</div>
       <div class="social">
         <div class="social-item">@magicblock</div>
         <div class="sep"></div>
         <div class="social-item">magicblock.xyz</div>
-      </div>
-    </div>
-
-    <div class="grid">
-      <div class="box box-1">
-        <div class="box-label">01 / CORE</div>
-        <div>
-          <div class="box-title">real-time<br>execution</div>
-          <div class="box-desc">27K addresses playing, trading, settling rounds live on Solana.</div>
-        </div>
-      </div>
-      
-      <div class="box box-2">
-        <div class="box-label">02</div>
-        <div>
-          <div class="box-title">no lag</div>
-          <div class="box-desc">every transaction. every round. instant feel.</div>
-        </div>
-      </div>
-      
-      <div class="box box-3">
-        <div class="box-label">03</div>
-        <div>
-          <div class="box-title">on Solana</div>
-          <div class="box-desc">you never left mainnet. ever.</div>
-        </div>
-      </div>
-      
-      <div class="box box-4">
-        <div class="box-label">04</div>
-        <div>
-          <div class="box-title">since June</div>
-          <div class="box-desc">proven at scale. 1 billion times.</div>
-        </div>
-      </div>
-      
-      <div class="box box-5">
-        <div class="box-label">+</div>
-        <div>
-          <div class="box-title">proof works</div>
-          <div class="box-desc">the engine is real.</div>
-        </div>
       </div>
     </div>
   </div>
@@ -123,7 +92,7 @@ function downloadPNG(id) {
   }).then(canvas => {
     const link = document.createElement('a');
     link.href = canvas.toDataURL('image/png');
-    link.download = id + '-style-7-features.png';
+    link.download = id + '-style-10-list.png';
     link.click();
   });
 }
