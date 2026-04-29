@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>1B Transactions — Style #1</title>
+<title>1B Transactions — Style #7</title>
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200;300;400;500;700;800;900&family=Cormorant+Garamond:ital,wght@0,300;0,500;1,300;1,400;1,500&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -10,63 +10,104 @@ body{background:#0a0a0a;font-family:'Space Grotesk',sans-serif;color:#fff;paddin
 .container{max-width:1400px;margin:0 auto;}
 .controls{display:flex;gap:16px;margin-bottom:32px;justify-content:center;flex-wrap:wrap;}
 button{font-family:'Unbounded',sans-serif;font-weight:700;font-size:13px;letter-spacing:2px;padding:12px 24px;border:none;border-radius:6px;cursor:pointer;transition:all 0.3s;}
-.btn-download{background:#AA00FF;color:#0a0a0a;}
-.btn-download:hover{background:#8800cc;transform:scale(1.05);}
-.banner{width:1600px;height:900px;background:#0a0a0a;position:relative;overflow:hidden;margin:0 auto;border:1px solid rgba(255,255,255,.1);}
-/* bg blobs */
-.banner::before{content:'';position:absolute;top:-200px;right:-150px;width:800px;height:800px;background:radial-gradient(circle,#AA00FF 0%,transparent 60%);opacity:.35;filter:blur(80px);}
-.banner::after{content:'';position:absolute;bottom:-200px;left:-100px;width:600px;height:600px;background:radial-gradient(circle,#2545F6 0%,transparent 60%);opacity:.25;filter:blur(100px);}
-/* grid */
-.grid-overlay{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:80px 80px;z-index:0;}
-/* watermark word */
-.watermark{position:absolute;right:-30px;top:120px;font-family:'Unbounded',sans-serif;font-weight:900;font-size:340px;letter-spacing:-12px;color:rgba(170,0,255,.08);line-height:1;z-index:1;}
-.content{position:relative;z-index:2;width:100%;height:100%;display:flex;flex-direction:column;}
-/* top bar */
-.top-bar{position:absolute;top:50px;left:60px;right:60px;display:flex;justify-content:space-between;align-items:center;font-family:'Unbounded',sans-serif;font-size:12px;letter-spacing:3px;color:rgba(255,255,255,.5);}
-.top-bar-right{font-family:'Space Grotesk',sans-serif;font-size:12px;letter-spacing:1.5px;color:rgba(255,255,255,.4);}
-/* main */
-.main{position:absolute;left:60px;top:240px;max-width:900px;}
-.main h1{font-family:'Unbounded',sans-serif;font-weight:900;font-size:84px;line-height:.95;letter-spacing:-3px;color:#fff;margin-bottom:34px;}
-.main h1 .highlight{background:#AA00FF;color:#0a0a0a;padding:0 22px;border-radius:6px;display:inline-block;}
-.divider{height:2px;width:120px;background:#AA00FF;margin-bottom:24px;}
-.main p{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:28px;color:#FCF2D8;max-width:720px;line-height:1.4;}
-/* bottom */
-.bottom{position:absolute;bottom:50px;left:60px;right:60px;display:flex;justify-content:space-between;align-items:center;}
-.social{display:flex;align-items:center;gap:18px;font-family:'Space Grotesk',sans-serif;font-size:14px;color:rgba(255,255,255,.45);}
+.btn-download{background:#59E09D;color:#0a0a0a;}
+.btn-download:hover{background:#3fc684;transform:scale(1.05);}
+.banner{width:1600px;height:900px;background:#0a0a0a;position:relative;overflow:hidden;margin:0 auto;border:1px solid rgba(255,255,255,.1);padding:60px;}
+.title-row{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:36px;}
+.title-left h2{font-family:'Unbounded',sans-serif;font-size:11px;letter-spacing:3px;color:rgba(255,255,255,.45);margin-bottom:14px;}
+.title-left h1{font-family:'Unbounded',sans-serif;font-weight:800;font-size:54px;line-height:1;color:#fff;letter-spacing:-2px;}
+.title-left h1 span{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;color:#FCF2D8;}
+.social{display:flex;align-items:center;gap:18px;font-family:'Space Grotesk',sans-serif;font-size:13px;color:rgba(255,255,255,.5);}
 .social-item{display:flex;align-items:center;gap:7px;}
 .sep{width:1px;height:14px;background:rgba(255,255,255,.18);}
-.link{font-family:'JetBrains Mono',monospace;font-size:11px;color:rgba(255,255,255,.3);letter-spacing:1px;}
+/* grid */
+.grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;grid-template-rows:1fr 1fr;gap:18px;height:560px;margin-top:24px;}
+.box{border-radius:14px;padding:36px;display:flex;flex-direction:column;justify-content:space-between;color:#fff;}
+.box-label{font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:2px;opacity:.7;margin-bottom:auto;}
+.box-title{font-family:'Unbounded',sans-serif;font-weight:800;font-size:42px;line-height:1;letter-spacing:-1px;margin-bottom:12px;}
+.box-desc{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;line-height:1.3;opacity:.85;}
+/* big purple */
+.box-1{grid-row:span 2;background:linear-gradient(135deg,#AA00FF 0%,#6600AA 100%);}
+.box-1 .box-title{font-size:42px;}
+.box-1 .box-desc{color:#fff;}
+/* orange */
+.box-2{background:#F2805A;color:#0a0a0a;}
+.box-2 .box-title{font-size:30px;}
+.box-2 .box-desc{font-size:14px;opacity:.8;}
+/* green */
+.box-3{background:#59E09D;color:#0a0a0a;}
+.box-3 .box-title{font-size:30px;}
+.box-3 .box-desc{font-size:14px;opacity:.8;}
+/* cream outline */
+.box-4{background:transparent;border:1.5px solid rgba(255,255,255,.18);color:#FCF2D8;}
+.box-4 .box-title{font-size:30px;color:#fff;}
+.box-4 .box-desc{font-size:14px;color:rgba(255,255,255,.55);}
+/* blue */
+.box-5{background:#2545F6;color:#fff;}
+.box-5 .box-title{font-size:24px;}
+.box-5 .box-desc{font-size:13px;opacity:.85;}
 </style>
 </head>
 <body>
 
 <div class="container">
   <div class="controls">
-    <button class="btn-download" onclick="downloadPNG('001')">↓ DOWNLOAD PNG — Style #1</button>
+    <button class="btn-download" onclick="downloadPNG('002')">↓ DOWNLOAD PNG — Style #7</button>
   </div>
 
-  <div id="banner001" class="banner">
-    <div class="grid-overlay"></div>
-    <div class="watermark">REAL<br>TIME</div>
-    
-    <div class="top-bar">
-      <span>MAGICBLOCK · INFRASTRUCTURE</span>
-      <span class="top-bar-right">1B / TRANSACTIONS</span>
-    </div>
-    
-    <div class="main">
-      <h1>1 billion<br>transactions<br><span class="highlight">processed</span></h1>
-      <div class="divider"></div>
-      <p>27K addresses executing real-time games, trades, and rounds on Solana since June 2025. That's not marketing — that's proof the engine works.</p>
-    </div>
-    
-    <div class="bottom">
+  <div id="banner002" class="banner">
+    <div class="title-row">
+      <div class="title-left">
+        <h2>WHAT MAKES 1B TRANSACTIONS REAL</h2>
+        <h1>four pieces. <span>one chain.</span></h1>
+      </div>
       <div class="social">
         <div class="social-item">@magicblock</div>
         <div class="sep"></div>
         <div class="social-item">magicblock.xyz</div>
       </div>
-      <div class="link">→ EPHEMERAL.ROLLUPS</div>
+    </div>
+
+    <div class="grid">
+      <div class="box box-1">
+        <div class="box-label">01 / CORE</div>
+        <div>
+          <div class="box-title">real-time<br>execution</div>
+          <div class="box-desc">27K addresses playing, trading, settling rounds live on Solana.</div>
+        </div>
+      </div>
+      
+      <div class="box box-2">
+        <div class="box-label">02</div>
+        <div>
+          <div class="box-title">no lag</div>
+          <div class="box-desc">every transaction. every round. instant feel.</div>
+        </div>
+      </div>
+      
+      <div class="box box-3">
+        <div class="box-label">03</div>
+        <div>
+          <div class="box-title">on Solana</div>
+          <div class="box-desc">you never left mainnet. ever.</div>
+        </div>
+      </div>
+      
+      <div class="box box-4">
+        <div class="box-label">04</div>
+        <div>
+          <div class="box-title">since June</div>
+          <div class="box-desc">proven at scale. 1 billion times.</div>
+        </div>
+      </div>
+      
+      <div class="box box-5">
+        <div class="box-label">+</div>
+        <div>
+          <div class="box-title">proof works</div>
+          <div class="box-desc">the engine is real.</div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -82,7 +123,7 @@ function downloadPNG(id) {
   }).then(canvas => {
     const link = document.createElement('a');
     link.href = canvas.toDataURL('image/png');
-    link.download = id + '-style-1-headline.png';
+    link.download = id + '-style-7-features.png';
     link.click();
   });
 }
